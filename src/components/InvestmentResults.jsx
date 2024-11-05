@@ -1,6 +1,10 @@
 import { formatter } from '../util/investment'
+import { calculateInvestmentResults } from '../util/investment'
 
-export default function InvestmentResults({ annualData }) {
+export default function InvestmentResults({ userInput }) {
+    const annualData = calculateInvestmentResults(userInput);
+    console.log(annualData);
+
     return (
         <div id="result">
             <table >
