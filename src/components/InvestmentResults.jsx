@@ -6,27 +6,25 @@ export default function InvestmentResults({ userInput }) {
     console.log(annualData);
 
     return (
-        <div id="result">
-            <table >
-                <thead >
-                    <tr>
-                        <th>Godina</th>
-                        <th>Ukupna vrijednost investicije</th>
-                        <th>Kamata</th>
-                        <th>Godišnji ulog</th>
+        <table id="result">
+            <thead >
+                <tr>
+                    <th>Godina</th>
+                    <th>Ukupna vrijednost investicije</th>
+                    <th>Kamata</th>
+                    <th>Godišnji ulog</th>
+                </tr>
+            </thead>
+            <tbody>
+                {annualData.map((data, index) => (
+                    <tr key={index}>
+                        <td>{data.year}</td>
+                        <td>{formatter.format(data.valueEndOfYear)}</td>
+                        <td>{formatter.format(data.interest)}</td>
+                        <td>{formatter.format(data.annualInvestment)}</td>
                     </tr>
-                </thead>
-                <tbody>
-                    {annualData.map((data, index) => (
-                        <tr key={index}>
-                            <td>{data.year}</td>
-                            <td>{formatter.format(data.valueEndOfYear)}</td>
-                            <td>{formatter.format(data.interest)}</td>
-                            <td>{formatter.format(data.annualInvestment)}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+                ))}
+            </tbody>
+        </table>
     );
 }
