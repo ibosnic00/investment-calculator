@@ -14,18 +14,19 @@ const ANNUAL_DATA_PRESET = [
 function App() {
   const [annualData, setAnnualData] = useState(ANNUAL_DATA_PRESET);
 
-  function handleInputChange(initialInvestment, annualInvestment, expectedReturn, duration) {
-    const calculatedAnnualData = calculateInvestmentResults(initialInvestment, annualInvestment, expectedReturn, duration);
+  function handleInputChange(userInput) {
+    const calculatedAnnualData = calculateInvestmentResults(userInput);
+    console.log(calculatedAnnualData);
     setAnnualData(calculatedAnnualData);
   }
 
   return (
-    <main>
+    <>
       <div>
         <InvestmentInputs onAnyInputChange={handleInputChange} />
       </div>
       <InvestmentResults annualData={annualData} />
-    </main>
+    </>
   )
 }
 
