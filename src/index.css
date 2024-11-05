@@ -36,7 +36,7 @@ body {
   max-width: 30rem;
   margin: 2rem auto;
   border-radius: 4px;
-  background: linear-gradient(180deg, #0f2027, #1b2d37);
+  background-color: transparent;
 }
 
 .input-group {
@@ -85,5 +85,12 @@ body {
 }
 
 .center {
+  text-align: center;
+}
+
+.chart-container {
+  width: 80%;
+  max-width: 50rem;
+  margin: 2rem auto;
   text-align: center;
 }
